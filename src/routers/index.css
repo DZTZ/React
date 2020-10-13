@@ -1,0 +1,13 @@
+.left-box{
+    background: #62D9FB;
+    height: 500px;
+    width: 20%;
+}
+.left-box li{
+    line-height: 50px;
+}
+.home-content{
+    background: blanchedalmond;
+    width: 80%;
+    padding: 10px 20px;
+}
