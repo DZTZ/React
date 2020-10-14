@@ -7,16 +7,29 @@ class home extends Component {
   }
 
   getProps() {
-    console.log(this.props)
+    console.log(this.props.history)
     // this.props.history.push("/list/1997");
     this.props.history.push({pathname:"/vegetables",query:{name:'西红柿'}});
+  }
+  toSonPage(type){
+    console.log(this)
+    // if(type == 1){
+    //   this.props.history.push({pathname:"/home-son-a"});
+    // }else{
+    //   this.props.history.push({pathname:"/home-son-b"});
+    // }
   }
 
   render() {
     return (
       <div className="home-content">
         <h1>我是首页</h1>
-        <button onClick={() => this.getProps()}>获取一下 props.history</button>
+        <button onClick={() => this.getProps()}>去蔬菜页</button>
+        <ul className="home-nav-button">
+          <li onClick={() => this.toSonPage(1)}>首页子页面A</li>
+          <li onClick={() => this.toSonPage(2)}>首页子页面B</li>
+        </ul>
+        {/*{this.props.children}*/}
       </div>
     );
   }

@@ -11,3 +11,13 @@
     width: 80%;
     padding: 10px 20px;
 }
+.home-nav-button{
+    display: flex;
+    background: #0E88EB;
+    color: aliceblue;
+    line-height: 30px;
+}
+.home-nav-button li{
+    list-style: none;
+    width: 150px;
+}
