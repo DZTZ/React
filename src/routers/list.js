@@ -13,10 +13,6 @@ class home extends Component {
     this.setState({
       paramsData: this.props.match.params
     })
-    // setTimeout(()=>{
-    //   console.log(this.state)
-    // },1000)
-    // console.log(this.props.match.params)
   }
 
   render() {

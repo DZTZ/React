@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter,Link} from "react-router-dom"
 
 class home extends Component {
   constructor(props) {
@@ -7,17 +8,17 @@ class home extends Component {
   }
 
   getProps() {
-    console.log(this.props.history)
-    // this.props.history.push("/list/1997");
-    this.props.history.push({pathname:"/vegetables",query:{name:'西红柿'}});
+    // console.log(this.props.history)
+    this.props.history.push({pathname: "/vegetables", query: {name: '西红柿'}});
   }
-  toSonPage(type){
-    console.log(this)
-    // if(type == 1){
-    //   this.props.history.push({pathname:"/home-son-a"});
-    // }else{
-    //   this.props.history.push({pathname:"/home-son-b"});
-    // }
+
+  toSonPage(type) {
+    // console.log(this)
+    if(type == 1){
+      this.props.history.push({pathname:"/home-son-a"});
+    }else{
+      this.props.history.push({pathname:"/home-son-b"});
+    }
   }
 
   render() {
@@ -28,11 +29,14 @@ class home extends Component {
         <ul className="home-nav-button">
           <li onClick={() => this.toSonPage(1)}>首页子页面A</li>
           <li onClick={() => this.toSonPage(2)}>首页子页面B</li>
+          {/*<li><Link to="/home-son-a">首页子页面A</Link></li>*/}
+          {/*<li><Link to="/home-son-b">首页子页面B</Link></li>*/}
         </ul>
-        {/*{this.props.children}*/}
+        {this.props.children}
       </div>
     );
   }
 }
 
-export default home;
+// 要withRouter绑定到组件上不然组件上是没有this.props.children.history
+export default withRouter(home);
