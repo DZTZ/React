@@ -10,9 +10,9 @@ import Vegetables from "./vegetables"
 import "./index.css"
 
 class AppRouter extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (

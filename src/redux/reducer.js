@@ -3,7 +3,7 @@ const defaultState = {
 }  //默认数据
 
 export default (state = defaultState, action) => {  //就是一个方法函数
-  console.log(action)
+  // console.log(action)
   if (action.type === 'changeName') {
     let newState = JSON.parse(JSON.stringify(state)) //深度拷贝state
     newState.name = action.value+ new Date() //学习使用 项目中不要在这里写 new Date()

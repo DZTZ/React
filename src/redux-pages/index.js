@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import store from '../redux'
+import { setDataAction,setData } from '../redux/actionCreators'
 
 class ReduxPage extends Component {
   constructor() {
@@ -21,10 +22,15 @@ class ReduxPage extends Component {
   }
   //改变state中的nam属性
   changeStoreName(){
-    const action ={
-      type:'changeName',//名称
-      value:'哦豁！变了！'//值
-    }
+    // const action ={
+    //   type:'changeName',//名称
+    //   value:'哦豁！变了！'//值
+    // }
+
+    // const action = setDataAction('现在的时间===》')
+    // store.dispatch(action)
+
+    const action = setData()
     store.dispatch(action)
   }
 
