@@ -19,8 +19,31 @@ function List() {
 
 function Ex(){
   const [count,setCount] = useState(0)
+  const [meObj,setMeObj] = useState({
+    name:'王杰',
+    age:18
+  })
+  const handleInputChange = () => {
+    setTimeout(()=>{
+      setCount(count+1)
+    },1500)
+  };
+  const onChangeMe = type=>{
+    if(type === 1){
+      setMeObj({
+        ...meObj,
+        name: '小王'
+      })
+    }else{
+      setMeObj({
+        ...meObj,
+        age: 14
+      })
+    }
+  };
 
   useEffect(()=>{
+    document.title = `You clicked ${count} times`;
     console.log('useEffect===>' + count)
     return()=>{
       console.log('===================')
@@ -30,7 +53,11 @@ function Ex(){
   return(
       <div>
         <p>点击了{count}下</p>
-        <button onClick={()=>setCount(count+1)}>点击</button>
+        {/*<button onClick={()=>setCount(count+1)}>点击</button>*/}
+        <button onClick={handleInputChange}>点击</button>
+        <p style={{'marginTop':'20px'}}>名字{meObj.name}---年龄{meObj.age}</p>
+        <button onClick={ ()=>onChangeMe(1)}>改变名字</button>
+        <button onClick={()=>onChangeMe(2)}>改变年龄</button>
 
         <Router>
           <ul>
